@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: notes-app
-        image: sanjeev525432/k8s-notes-app:v1
+        image: ______
         ports:
         - containerPort: 5000
         env:

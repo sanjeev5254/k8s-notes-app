@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notes-app
+  template:
+    metadata:
+      labels:
+        app: notes-app
+    spec:
+      containers:
+      - name: notes-app
+        image: sanjeev525432/k8s-notes-app:v1
+        ports:
+        - containerPort: 5000
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: notes-app-config
+              key: APP_NAME
+        - name: APP_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: notes-app-config
+              key: APP_ENV
+        - name: APP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: notes-app-secret
+              key: APP_PASSWORD

@@ -97,12 +97,6 @@ http://<node-ip>:30008
 
 ---
 
-## 📸 Screenshots
-
-*Add screenshots here (pods running, service, browser output)*
-
----
-
 ## 🧠 Learning Outcomes
 
 * Understanding Kubernetes architecture
